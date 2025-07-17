@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mike Guwak</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300,400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<body>
+
+
+
+    <!-- Language selection popup -->
+<!-- <div id="resume-popup" style="display: none; position: fixed; top: 30%; left: 50%; transform: translateX(-50%); background: #fff; padding: 20px 30px; box-shadow: 0 0 15px rgba(0,0,0,0.2); border-radius: 8px; z-index: 10000; text-align: center;">
+  <p style="font-weight: 600; margin-bottom: 15px;">Choose Resume Language</p>
+  <button onclick="downloadResume('german')" style="margin-right: 10px; padding: 8px 16px;">German</button>
+  <button onclick="downloadResume('english')" style="padding: 8px 16px;">English</button>
+</div> -->
+
+<script>
+  const downloadBtn = document.getElementById('download-resume-btn');
+  const popup = document.getElementById('resume-popup');
+
+  // Show popup on button click
+  downloadBtn.addEventListener('click', () => {
+    popup.style.display = 'block';
+  });
+
+  // Resume download function
+  function downloadResume(lang) {
+    let fileUrl = '';
+
+    if (lang === 'german') {
+      fileUrl = './docs/Mike_Guwak_Resume_German.pdf';  // 🔁 Update to your actual file path
+    } else if (lang === 'english') {
+      fileUrl = './docs/Mike CV engl-2.pdf'; // 🔁 Update to your actual file path
+    }
+
+    popup.style.display = 'none';
+
+    // Create temporary download link
+    const link = document.createElement('a');
+    link.href = fileUrl;
+    link.download = fileUrl.split('/').pop();
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+</script>
+
+
+<!-- Resume language popup -->
+<div id="resume-popup" style="
+  display: none;
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  padding: 20px 30px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  z-index: 10000;
+  text-align: center;
+">
+  <p style="font-weight: 600; margin-bottom: 15px;">Choose Resume Language</p>
+  <button onclick="downloadResume('german')" style="margin-right: 10px; padding: 8px 16px;">German</button>
+  <button onclick="downloadResume('english')" style="padding: 8px 16px;">English</button>
+</div>
+
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const downloadBtn = document.getElementById('download-resume-btn');
+    const popup = document.getElementById('resume-popup');
+
+    downloadBtn.addEventListener('click', () => {
+      popup.style.display = 'block';
+    });
+
+    window.downloadResume = function (lang) {
+      let fileUrl = '';
+
+      if (lang === 'german') {
+        fileUrl = './doc/Mike CV engl-2.pdf';
+      } else if (lang === 'english') {
+        fileUrl = './doc/Mike CV German.pdf';
+      }
+
+      popup.style.display = 'none';
+
+      const link = document.createElement('a');
+      link.href = fileUrl;
+      link.download = fileUrl.split('/').pop();
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  });
+</script>
+
+
+
+    <!-----------------mobile menu-------------->
+    
+
+    <div class="header">
+        <div class="menu-button">
+            <svg class="menu-svg" fill="#fff" height="25" viewBox="0 0 28 28" width="25" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
+              </svg>
+        </div>
+        
+      <div class="menu-overlay">
+        <div class="menu-plate">
+          <div class="menu-close">
+            <svg fill="#fff" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+              <path d="M0 0h24v24H0z" fill="none"></path>
+            </svg>
+          </div>
+          <div class="manu-bar">
+            <h4>MIKE <span style="font-weight: 700;">GUWAK</span></h4>
+            <p class="title">Technical Consultant for Infrastructure Services and IT Architecture</p>
+            
+            <nav id="side-menu" class="side-menu">
+                <ul>
+                  <li class=""><a href="#main-content"><i class="fa fa-angle-right"></i> Intro</a></li>
+                  <li class=""><a href="#section-2"><i class="fa fa-angle-right"></i> Education</a></li>
+                  <li class=""><a href="#section-3"><i class="fa fa-angle-right"></i> Work Experience</a></li>
+                  <li class=""><a href="#section-4"><i class="fa fa-angle-right"></i> Skills</a></li>
+                  <li class=""><a href="#section-7"><i class="fa fa-angle-right"></i> Contact</a></li>
+                </ul>
+              </nav>
+
+              <div class="last-button">
+                <ul>
+                    <li>
+  <button class="btn-1" id="download-resume-btn">
+    <i class="fa-solid fa-download"></i> download my resume
+  </button>
+</li>
+
+
+                    <li><a class="btn-2" href="#contact"><i class="fa-regular fa-envelope"></i> send me a massage</a></li>
+                </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+    <!---------------- mobile menu-------------->
+    <div class="all-content">
+    <section class="content">
+
+        <div class="top-color">
+            <div class="flex-column1"></div>
+            <div class="flex-column2"></div>
+            <div class="flex-column3"></div>
+            <div class="flex-column4"></div>
+            <div class="flex-column5"></div>
+        </div>
+
+        <div class="container">
+
+            <section class="main-content" id="main-content">
+                <div class="flex-column">
+                    <div class="left-column">
+                        <img src="./image/about-.jpg" alt="">
+                    </div>
+                    <div class="right-column">
+                        <section class="profile">
+                            <h1><span style="color: #03cc85; font-weight: bold;">MIKE GUWAK</span></h1>
+                            <h4>Technical Consultant for Infrastructure Services and IT Architecture</h4>
+                            <p style="text-align: justify;"><span style="font-weight: 400; font-style: italic;">"Being an experienced IT professional with more than 25 years of practical experience in infrastructure management, system administration and IT service responsibility, I stand for stability, efficiency and high quality standards in IT operations. I combine strong analytical skills with practical implementation expertise - both in corporate structures and in medium-sized companies. My profile is characterised by independent action, a holistic understanding of IT and a technical flair for dealing with complex infrastructures."
+</p>
+                        </section>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="new-content">
+                <div class="flex-column">
+                    <div class="left-column">
+                        <div class="line-1"></div>
+                        <div class="circle-1"></div>
+                        <div class="circle-2"></div>
+                        <div class="circle-3"></div>
+                        <div class="circle-4"></div>
+                    </div>
+                    <div class="right-column">
+                        <section class="section-1">
+                            <h1>Profile</h1>
+                            <h3>Full Name</h3>
+                            <p>MIKE GUWAK</p>
+                            <h3>Born</h3>
+                            <p>04 April 1971 - Sachsenring 13a,
+                                65817 Eppstein - Germany
+                            </p>
+                            <h3>Email</h3>
+                            <p>info@mikeguwak.de</p>
+                            <h3>Find Me On</h3>
+                            <ul>
+                                <!-- <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li> -->
+                                <!-- <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li> -->
+                                <li><a href="https://www.linkedin.com/in/mike-guwak-148055367/?original_referer=https%3A%2F%2Fwww%2Egoogle%2Ecom%2F&originalSubdomain=de" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                <li><a href="https://www.xing.com/profile/Mike_Guwak" target="_blank"><i class="fa-brands fa-xing"></i></i></a></li>
+                                <!-- <li><a href="#"><i class="fa-solid fa-paper-plane"></i></a></li>xin -->
+                            </ul>
+                        </section>
+
+
+    <!-- Professional Experiences -->
+                        <section class="section-3" id="section-3">
+                            <h1 style="margin-bottom: 10px; margin-top: 50px;">PROFESSIONAL EXPERIENCES</h1><br>
+                            <h3>Fibrolux GmbH | Hofheim, Germany</h3>
+                            <p style="color: #777777; font-size: 14px; margin-top: 4px;"><i class="fa-solid fa-flag"></i> <strong>Senior IT-Systemadministrator</strong> - <span style="font-style: italic;">Since July 2023</span></p>
+                           
+                            <div style="text-align: justify; color: #0e0e0e; font-size: 14px; margin-top: 4px;">
+                            <li >Responsible for setting up, operating and further developing the entire IT infrastructure</li>
+                            <li>Introduction of proactive monitoring with Zabbix to monitor business-critical systems</li>
+                            <li>Maintenance and further development of IT documentation and emergency plans</li>
+                            <li>Administered Microsoft 365 with focus on SharePoint, Teams, Defender, Intune, and Exchange</li>
+                            <li>Acted as interface between management, departments, and external IT providers.</li>
+
+                           </div>
+                            
+
+                            <h3>SOLVVision AG | Frankfurt, Germany</h3>
+                            <p style="color: #777777; font-size: 14px; margin-top: 4px;"><i class="fa-solid fa-flag"></i> <strong>Consultant Infrastructure</strong> - <span style="font-style: italic;">January 2023 - June 2023</span></p>
+                            <div style="text-align: justify; color: #0e0e0e; font-size: 14px; margin-top: 4px;">
+                                 <li>Supporting customers in the analysis and optimisation of their IT infrastructure</li>
+                                <li>Processing complex tickets in the area of infrastructure via ServiceNow</li>
+                                <li>Structuring and evaluation of CMDBs to improve data quality</li>
+                                <li>Conception and development of virtual data centres for enterprise solutions.</li>
+                            </div>
+                               
+
+                            <h3>Red Reply GmbH | Frankfurt, Germany</h3>
+                            <p style="color: #777777; font-size: 14px; margin-top: 4px;"><i class="fa-solid fa-flag"></i> <strong>IT Service Manager</strong> - <span style="font-style: italic;">January 2021 - December 2022</span></p>
+                            <div style="text-align: justify; color: #0e0e0e; font-size: 14px; margin-top: 4px;">
+                                <li>Monthly creation of SLA reports and service desk evaluations</li>
+                                <li>Support and maintenance of the Oracle ZFS storage systems</li>
+                                <li>Responsibility for 2nd level support in the context of business-critical applications</li>
+                                <li>Introduction of standardised support processes based on ITIL.</li>
+                            </div>
+
+                            <h3>NECDIS GmbH | Frankfurt, Germany</h3>
+                            <p style="color: #777777; font-size: 14px; margin-top: 4px;"><i class="fa-solid fa-flag"></i> <strong>Senior IT Systems Engineer</strong> - <span style="font-style: italic;">July 2019 - December 2020</span></p>
+                            <div style="text-align: justify; color: #0e0e0e; font-size: 14px; margin-top: 4px;">
+                                <li>Operation and maintenance of the internal IT system landscape incl. CRM/ERP</li>
+                                <li>Creation of technical solution concepts for customer projects</li>
+                                <li>Technical evaluation of public tenders</li>
+                                <li>Preparation of offers, communication with customers and suppliers</li>
+                                <li>Coordination with manufacturers and external partners</li>
+                                <li>Documentation of technical implementations and solutions.</li>
+                            </div>
+
+                            <h3>Bluetelligence GmbH | Wiesbaden, Germany</h3>
+                            <p style="color: #777777; font-size: 14px; margin-top: 4px;"><i class="fa-solid fa-flag"></i> <strong>Quality Manager Enterprise Glossary</strong> - <span style="font-style: italic;">February 2019 – June 2019</span></p>
+                            <div style="text-align: justify; color: #0e0e0e; font-size: 14px; margin-top: 4px;">
+                                <li>Responsibility for testing the software "Enterprise Glossary"</li>
+                                <li>Creation of extensive product documentation in a wiki (Atlassian Confluence)</li>
+                                <li>Support in first level support.</li>
+                            </div>
+                            
+
+                             <h3>ORACLE Deutschland B.V. & Co KG | Dreieich, Germany</h3>
+                            <p style="color: #777777; font-size: 14px; margin-top: 4px;"><i class="fa-solid fa-flag"></i> <strong>Senior Technical Support Engineer</strong> - <span style="font-style: italic;"> July 2010 - January 2019</span></p>
+                            <div style="text-align: justify; color: #0e0e0e; font-size: 14px; margin-top: 4px;">
+                                <li>Support of the following Oracle products: SL8500, SL4000, SL3000, SL150, L500, L700, SL24/48, StorageTek SAM-FS/QFS software, Solaris</li>
+                                <li>Fault diagnosis with Remote Support WebEx or SDP2</li>
+                                <li>Provision of problem isolation and resolution for very complex problems</li>
+                                <li>Support for possible future problem determination/solution.</li>
+                            </div>
+                           
+                             <h3>Sun Microsystems GmbH | Langen, Germany</h3>
+                            <p style="color: #777777; font-size: 14px; margin-top: 4px;"><i class="fa-solid fa-flag"></i> <strong>TSC Engineer CT3 October</strong> - <span style="font-style: italic;"> 2000 - June 2010</span></p>
+                            <div style="text-align: justify; color: #0e0e0e; font-size: 14px; margin-top: 4px;">
+                            </div>
+                           
+                             <h3>GE CompuNet | Frankfurt, Germany</h3>
+                            <p style="color: #777777; font-size: 14px; margin-top: 4px;"><i class="fa-solid fa-flag"></i> <strong>System Engineer Support Services</strong> - <span style="font-style: italic;"> October 1996 - September 2000</span></p>
+                            <div style="text-align: justify; color: #0e0e0e; font-size: 14px; margin-top: 4px;">
+                            </div>
+                           
+                             <h3>Systematics Rhein-Main | Wiesbaden, Germany</h3>
+                            <p style="color: #777777; font-size: 14px; margin-top: 4px;"><i class="fa-solid fa-flag"></i> <strong>System Technician </strong> - <span style="font-style: italic;"> November 1995 - September 1996</span></p>
+                            <div style="text-align: justify; color: #0e0e0e; font-size: 14px; margin-top: 4px;">
+                            </div>
+                           
+
+                             <h3>Henning Sicherheit GmbH | Hainburg, Germany</h3>
+                            <p style="color: #777777; font-size: 14px; margin-top: 4px;"><i class="fa-solid fa-flag"></i> <strong>Energy Electronics Technician</strong> - <span style="font-style: italic;"> November 1994 – February 1995</span></p>
+                            <div style="text-align: justify; color: #0e0e0e; font-size: 14px; margin-top: 4px;">
+                            </div>
+
+
+
+                             <h3>Siemens AG | Frankfurt, Germany</h3>
+                            <p style="color: #777777; font-size: 14px; margin-top: 4px;"><i class="fa-solid fa-flag"></i> <strong>Energy Electronics Technician - Systems Engineering </strong> - <span style="font-style: italic;"> June 1992 - October 1994 </span></p>
+                            <div style="text-align: justify; color: #0e0e0e; font-size: 14px; margin-top: 4px;">
+                            </div>
+                        
+
+                        </section>
+
+
+
+                <!-- Educations -->
+                        <section class="section-2" id="section-2">
+                            <h1 style="margin-bottom: 10px; margin-top: 50px;">Educations</h1><br>
+                            <h3>Apprenticeship - Energy Electronics Technician Specialising in Systems Engineering</h3>
+                            <p style="color: #777777; font-size: 14px; margin-top: 4px;"><i class="fa-solid fa-building-columns"></i> <strong>Siemens AG | Frankfurt, Germany</strong> - <span style="font-style: italic;">September 1988 - June 1992</span></p>
+                            <p style=" text-align: justify; font-size: 13px; margin-bottom: 40px;">Completed a comprehensive apprenticeship in Energy Electronics with a focus on Systems Engineering. Gained hands-on experience in electronic systems installation, diagnostics, and maintenance, while supporting engineering teams in industrial energy applications.</p>
+
+                            <h3>High School Certificate</h3>
+                            <p style="color: #777777; font-size: 14px; margin-top: 4px;"><i class="fa-solid fa-building-columns"></i> <strong>Konrad-Haenisch-Schule | Frankfurt, Germany</strong> - <span style="font-style: italic;">1982 - 1988</span></p>
+                            <p style=" text-align: justify; font-size: 13px; margin-bottom: 40px;">Earned High School Certificate with a focus on technical and general education, laying the foundation for a career in electronics and engineering.</p>
+
+
+                            <!-- Cirtifications -->
+                              <h1 style="margin-bottom: 30px; margin-top: 50px;">CERTIFICATIONS</h1><br>
+
+                            <div style="margin-top: -20px; color: #000000; font-size: 14px;">
+                                <li>Microsoft Defender - Fending Off Threats</li>
+                                <li>Microsoft Teams, Intune, Sharepoint Online</li>
+                                <li>Zabbix Monitoring - Introduction & Operation</li>
+                                <li>Nginx - High Performance Web Server</li>
+                                <li>Fail2Ban - Protection Against Brute Force Attacks</li>
+                                <li>Veeam Backup & Replication - Compact Course</li>
+                                <li>Microsoft Azure - Basics & Administration</li>
+                                <li>Windows Server 2022 - Administration.</li>
+                            </div>
+
+                        </section>
+
+
+                    
+
+
+                        <!-- skills -->
+                        <section class="section-4" id="section-4">
+                            <h1 style="margin-bottom: 10px; margin-top: 50px;">IT SKILLS</h1><br>
+                            <div>
+                                <li><span style="color: #000000; font-size: 14px; font-weight: bold;">Operating Systems: </span> <span style="color: #000000; font-size: 14px;">Windows Server, Linux (Debian, Ubuntu)</span></li>
+                                <li><span style="color: black; font-size: 14px; font-weight: bold;">Cloud & Microsoft: </span> <span style="color: #000000; font-size: 14px;" >Microsoft 365, Azure, Intune, SharePoint, Teams</span></li>
+                                <li><span style="color: black; font-size: 14px; font-weight: bold;">Backup & Recovery: </span><span style="color: #000000; font-size: 14px;">Veeam, Oracle ZFS Storage</span></li>
+                                <li><span style="color: black; font-size: 14px; font-weight: bold;">Monitoring & Logging: </span><span style="color: #000000; font-size: 14px;">Zabbix, Nginx, Fail2Ban</span></li>
+                                <li><span style="color: black; font-size: 14px; font-weight: bold;">Network & Security:  </span><span style="color: #000000; font-size: 14px;">Firewall configuration, access controls</span></li>
+                                <li><span style="color: black; font-size: 14px; font-weight: bold;">Service & Ticketing: </span><span style="color: #000000; font-size: 14px;">Jira, Jira SM, Confluence, ServiceNow</span></li>
+                                <li><span style="color: black; font-size: 14px; font-weight: bold;">Scripting & Automation: </span><span style="color: #000000; font-size: 14px;">PowerShell (basics), Bash</span></li>
+                                <li><span style="color: black; font-size: 14px; font-weight: bold;">Virtualisation & Infrastructure: </span><span style="color: #000000; font-size: 14px;">setting up virtual data centres.</span></li>
+                            </div>
+                        </section>
+
+
+
+
+            <!-- Core components section -->
+
+                        <section class="section-5" id="section-5">
+                            <h1 style="margin-bottom: 10px; margin-top: 50px;">CORE COMPETENCES</h1>
+                            <div style="color: #000000; font-size: 14px;">
+                                <li>Management & structuring of IT operating units</li>
+                                <li>Introduction & optimisation of IT service processes (ITIL-based)</li>
+                                <li>Strategic further development of IT infrastructures</li>
+                                <li>Creation & maintenance of emergency plans, operational documentation</li>
+                                <li>Coordination of service providers & external partners</li>
+                                <li>SLA-/KPI-supported service monitoring</li>
+                                <li>Interface management between IT & specialist departments</li>
+                                <li>Analysing & improving internal IT processes</li>
+                                <li>Design & implementation of technical solutions</li>
+                                <li>Communication security at all levels</li>
+                                <li>Public tenders (evaluation & technology).</li>
+                            </div>
+                        
+                        
+
+
+
+
+                        <section" class="section-7" id="section-7">
+                            <h1 style="margin-top: 50px;" >Contact</h1>
+                            <h3>Send me a message</h3>
+
+                            <!-- Include EmailJS SDK -->
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript">
+  (function() {
+    emailjs.init("CDyR3vXQ3k4y0ab12"); // ← this is your USER_ID
+ // Replace with your actual User ID from EmailJS
+  })();
+</script>
+
+
+
+  <div id="contact" class="from">
+    <!-- CONTACT FORM -->
+    <form id="contact-form">
+      <div class="left-column1">
+        <input type="text" name="user_name" placeholder="Name" required>
+        <input type="email" name="user_email" placeholder="Email" required>
+        <input type="text" name="subject" placeholder="Subject" required>
+        <textarea name="message" cols="30" rows="10" placeholder="Message" required></textarea>
+        <button type="submit">Submit!</button>
+      </div>
+    </form>
+
+    <!-- CONTACT INFO -->
+    <div class="right-column2">
+      <h5>Address</h5>
+      <p>Sachsenring 13a, 65817 Eppstein - Germany</p>
+
+      <h5>Phone</h5>
+      <p><a href="tel:+4915737649289">+49 1573 764 92 89</a></p>
+
+      <h5>Mail</h5>
+      <p><a href="mailto:info@mikeguwak.de">info@mikeguwak.de</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- JavaScript to send form via EmailJS -->
+<script>
+  document.getElementById("contact-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+      .then(function() {
+        alert('Message sent successfully!');
+      }, function(error) {
+        alert('Failed to send message. Error: ' + JSON.stringify(error));
+      });
+  });
+</script>
+
+<section class="section-8">
+    <h3>Thank You!</h3>
+</section>
+
+                        
+</div>
+</div>
+                
+</section>
+</div>
+
+
+        <section class="footer">
+            <p>"Driving collaboration through technology."</p>
+            <h6>Mike Guwak</h6>
+        </section>
+    </section>
+    </div>
+
+
+
+
+    <script>
+        $(function () {
+      menuToggle();
+    });
+    function menuToggle() {
+      $(".menu-plate").on("click", function (e) {
+        e.stopPropagation();
+      });
+      $(".menu-close, .header .menu-svg, .menu-overlay").on("click", function () {
+        $("html").toggleClass("menu-open");
+      });
+    }
+    
+      </script>
+
+
+
+
+
+
+</body>
+</html>
