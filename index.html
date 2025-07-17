@@ -401,27 +401,22 @@
                             <h3>Send me a message</h3>
 
                             <!-- Include EmailJS SDK -->
-<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script type="text/javascript">
-  (function() {
-    emailjs.init("CDyR3vXQ3k4y0ab12"); // ← this is your USER_ID
- // Replace with your actual User ID from EmailJS
-  })();
-</script>
 
 
 
   <div id="contact" class="from">
     <!-- CONTACT FORM -->
-    <form id="contact-form">
-      <div class="left-column1">
-        <input type="text" name="user_name" placeholder="Name" required>
-        <input type="email" name="user_email" placeholder="Email" required>
-        <input type="text" name="subject" placeholder="Subject" required>
-        <textarea name="message" cols="30" rows="10" placeholder="Message" required></textarea>
-        <button type="submit">Submit!</button>
-      </div>
-    </form>
+   <form id="contact-form" action="index.php" method="POST">
+  <div class="left-column1">
+    <input type="text" name="user_name" placeholder="Name" required>
+    <input type="email" name="user_email" placeholder="Email" required>
+    <input type="text" name="subject" placeholder="Subject" required>
+    <textarea name="message" cols="30" rows="10" placeholder="Message" required></textarea>
+    <button type="submit">Submit!</button>
+  </div>
+</form>
+
+    
 
     <!-- CONTACT INFO -->
     <div class="right-column2">
@@ -437,19 +432,12 @@
   </div>
 </section>
 
-<!-- JavaScript to send form via EmailJS -->
-<script>
-  document.getElementById("contact-form").addEventListener("submit", function(event) {
-    event.preventDefault();
 
-    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
-      .then(function() {
-        alert('Message sent successfully!');
-      }, function(error) {
-        alert('Failed to send message. Error: ' + JSON.stringify(error));
-      });
-  });
-</script>
+
+
+
+
+
 
 <section class="section-8">
     <h3>Thank You!</h3>
@@ -487,10 +475,6 @@
     }
     
       </script>
-
-
-
-
 
 
 </body>
