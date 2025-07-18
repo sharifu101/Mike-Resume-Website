@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $to = "rukonfpi@gmail.com"; // Replace with your real email
+    $to = "rinfo@mikeguwak.de"; // Replace with your real email
     $subject = htmlspecialchars($_POST['subject']);
     $name = htmlspecialchars($_POST['user_name']);
     $email = htmlspecialchars($_POST['user_email']);

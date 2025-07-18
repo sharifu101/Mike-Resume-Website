@@ -1,7 +1,7 @@
 body{
     margin: 0;
     padding: 0;
-    background: url(../image/bg-james3-.jpg);
+    background: url(../image/server-system-upkeep.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     height: 100%;
@@ -499,6 +499,13 @@ body{
 	top: 45%;
 }
 
+
+
+.space{
+    margin-top: 30px;
+}
+
+
 /*================ section-2 end =================*/
 
 
@@ -584,7 +591,7 @@ body{
     position: relative;
 }
 
-.section-5 h3::before {
+/* .section-5 h3::before {
 	content: '';
 	position: absolute;
 	height: 19px;
@@ -595,7 +602,7 @@ body{
 	top: 82%;
 	transform: translateY(-50%);
 	box-shadow: 0 0 0 11px #fff, 0 0 0 17px #03cc85;
-}
+} */
 
 .section-5 p{
     color: #333;
